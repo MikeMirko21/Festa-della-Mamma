@@ -8,7 +8,9 @@
         body {
             margin: 0;
             font-family: "Poppins", sans-serif;
-            background: url('https://i.imgur.com/6u1aYxP.png') repeat;
+
+            /* SFONDO CON LA TUA IMMAGINE */
+            background: url('INSERISCI_LINK_IMMAGINE_FIORI') repeat;
             background-size: 350px;
             padding: 40px;
         }
@@ -32,38 +34,39 @@
             text-shadow: 0 0 10px #ffb3d9;
         }
 
-        /* Pannelli generali */
+        /* Pannello principale */
         .panel {
             background: rgba(255, 255, 255, 0.85);
             border-radius: 18px;
             padding: 25px;
             margin: 40px auto;
-            max-width: 900px;
+            max-width: 1000px;
             box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
             border: 2px solid #ffb3d9;
         }
 
-        /* Sezione foto + testo */
-        .photo-section {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-            flex-wrap: wrap;
+        /* Griglia foto */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
         }
 
-        .photo-section img {
-            width: 300px;
-            height: 300px;
+        .photo-grid img {
+            width: 100%;
+            height: 180px;
             object-fit: cover;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
         }
 
+        /* Testo descrizione */
         .text-box {
-            flex: 1;
             font-size: 18px;
             color: #444;
             line-height: 1.6;
+            text-align: center;
         }
     </style>
 </head>
@@ -75,19 +78,28 @@
         <h1>🌸 Buona Festa della Mamma 🌸</h1>
     </div>
 
-    <!-- Primo pannello foto + testo -->
+    <!-- Pannello unico con 5 foto + descrizione -->
     <div class="panel">
-        <div class="photo-section">
-            <img src="INSERISCI_LINK_FOTO" alt="Foto mamma">
-            <div class="text-box">
-                <h2>Il nostro ricordo</h2>
-                <p>
-                    Qui puoi raccontare la storia della foto:  
-                    un momento speciale, un ricordo importante,  
-                    qualcosa che vuoi condividere con lei.
-                </p>
-            </div>
+
+        <!-- Griglia foto -->
+        <div class="photo-grid">
+            <img src="LINK_FOTO_1">
+            <img src="LINK_FOTO_2">
+            <img src="LINK_FOTO_3">
+            <img src="LINK_FOTO_4">
+            <img src="LINK_FOTO_5">
         </div>
+
+        <!-- Descrizione unica -->
+        <div class="text-box">
+            <h2>Il nostro ricordo</h2>
+            <p>
+                Qui puoi raccontare la storia che unisce tutte queste foto:  
+                un momento speciale, un ricordo importante,  
+                qualcosa che vuoi condividere con lei in questo giorno speciale.
+            </p>
+        </div>
+
     </div>
 
 </body>
