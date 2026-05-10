@@ -40,9 +40,12 @@
             border-radius: 18px;
             padding: 25px;
             margin: 40px auto;
-            max-width: 900px;
+            max-width: 1100px;
             box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
             border: 2px solid #ffb3d9;
+
+            display: flex;
+            gap: 30px;
         }
 
         /* Colonna verticale delle foto */
@@ -50,26 +53,29 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            margin-bottom: 25px;
+            width: 40%;
         }
 
         .photo-column img {
             width: 100%;
-            max-width: 350px;
-            height: 250px;
+            height: 180px;
             object-fit: cover;
             border-radius: 12px;
             box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
-            margin: 0 auto;
         }
 
         /* Testo descrizione */
         .text-box {
+            width: 60%;
             font-size: 18px;
             color: #444;
             line-height: 1.6;
-            text-align: center;
             padding: 10px 20px;
+        }
+
+        .text-box h2 {
+            color: #d63384;
+            text-shadow: 0 0 8px #ffb3d9;
         }
     </style>
 </head>
@@ -81,7 +87,7 @@
         <h1>🌸 Buona Festa della Mamma 🌸</h1>
     </div>
 
-    <!-- Pannello unico con 5 foto verticali + descrizione -->
+    <!-- Pannello unico -->
     <div class="panel">
 
         <!-- Colonna verticale delle foto -->
