@@ -8,18 +8,31 @@
         body {
             margin: 0;
             font-family: "Poppins", sans-serif;
-            background: url('https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b') no-repeat center/cover;
-            backdrop-filter: blur(3px);
+            background: url('https://i.imgur.com/6u1aYxP.png') repeat;
+            background-size: 350px;
             padding: 40px;
         }
 
-        h1 {
+        /* Pannello del titolo */
+        .title-panel {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 18px;
+            padding: 20px;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
             text-align: center;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
+            border: 2px solid #ffb3d9;
+        }
+
+        .title-panel h1 {
             color: #d63384;
             font-size: 42px;
+            margin: 0;
             text-shadow: 0 0 10px #ffb3d9;
         }
 
+        /* Pannelli generali */
         .panel {
             background: rgba(255, 255, 255, 0.85);
             border-radius: 18px;
@@ -30,6 +43,7 @@
             border: 2px solid #ffb3d9;
         }
 
+        /* Sezione foto + testo */
         .photo-section {
             display: flex;
             gap: 25px;
@@ -56,8 +70,12 @@
 
 <body>
 
-    <h1>🌸 Buona Festa della Mamma 🌸</h1>
+    <!-- Titolo -->
+    <div class="title-panel">
+        <h1>🌸 Buona Festa della Mamma 🌸</h1>
+    </div>
 
+    <!-- Primo pannello foto + testo -->
     <div class="panel">
         <div class="photo-section">
             <img src="INSERISCI_LINK_FOTO" alt="Foto mamma">
