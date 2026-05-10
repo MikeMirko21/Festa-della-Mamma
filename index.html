@@ -7,109 +7,163 @@
     <style>
         body {
             margin: 0;
-            font-family: "Poppins", sans-serif;
-
-            /* SFONDO CON LA TUA IMMAGINE DEI FIORI */
-            background: url('po1jW6hCTH79eZatipvfT.jpeg') repeat;
-            background-size: 450px;
             padding: 40px;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(120deg, #ff9ecd, #ffe6f7, #ffc2e2, #ffb3d9);
+            background-size: 400% 400%;
+            animation: bgMove 12s infinite alternate ease-in-out;
+            overflow-x: hidden;
         }
 
-        /* Pannello del titolo */
-        .title-panel {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 18px;
-            padding: 20px;
-            max-width: 700px;
-            margin: 0 auto 40px auto;
-            text-align: center;
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
-            border: 2px solid #ffb3d9;
+        @keyframes bgMove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
 
-        .title-panel h1 {
-            color: #d63384;
-            font-size: 42px;
-            margin: 0;
-            text-shadow: 0 0 10px #ffb3d9;
-        }
-
-        /* Pannello principale */
-        .panel {
+        .container {
+            max-width: 900px;
+            margin: auto;
             background: rgba(255, 255, 255, 0.85);
-            border-radius: 18px;
-            padding: 25px;
-            margin: 40px auto;
-            max-width: 1100px;
-            box-shadow: 0 0 20px rgba(255, 105, 180, 0.6);
-            border: 2px solid #ffb3d9;
-
-            display: flex;
-            gap: 30px;
+            padding: 50px;
+            border-radius: 25px;
+            position: relative;
+            animation: float 4s infinite ease-in-out;
+            border: 3px solid transparent;
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
         }
 
-        /* Colonna verticale delle foto */
-        .photo-column {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 40%;
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0px); }
         }
 
-        .photo-column img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: 0 0 12px rgba(255, 105, 180, 0.5);
+        .glow-border {
+            position: absolute;
+            inset: 0;
+            border-radius: 25px;
+            padding: 3px;
+            background: linear-gradient(120deg, #ff4da6, #ff99cc, #ff66b3, #ff4da6);
+            background-size: 400% 400%;
+            animation: borderGlow 6s infinite alternate;
+            z-index: -1;
         }
 
-        /* Testo descrizione */
-        .text-box {
-            width: 60%;
-            font-size: 18px;
-            color: #444;
-            line-height: 1.6;
-            padding: 10px 20px;
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
 
-        .text-box h2 {
+        h1 {
+            text-align: center;
             color: #d63384;
-            text-shadow: 0 0 8px #ffb3d9;
+            font-size: 52px;
+            margin-bottom: 25px;
+            text-shadow: 0 0 15px #ffb3d9, 0 0 25px #ff8ec6;
+            animation: glow 3s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #ffb3d9; }
+            100% { text-shadow: 0 0 25px #ff66b3; }
+        }
+
+        p {
+            font-size: 22px;
+            line-height: 1.8;
+            color: #444;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        p:nth-child(2) { animation-delay: 0.5s; }
+        p:nth-child(3) { animation-delay: 1s; }
+        p:nth-child(4) { animation-delay: 1.5s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cuoricini animati */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 28px;
+            color: #ff4da6;
+            animation: rise 7s infinite ease-in;
+            opacity: 0.7;
+        }
+
+        @keyframes rise {
+            0% { transform: translateY(0) translateX(0); opacity: 0.7; }
+            100% { transform: translateY(-120vh) translateX(40px); opacity: 0; }
+        }
+
+        /* Effetto macchina da scrivere */
+        .typewriter {
+            margin-top: 30px;
+            font-size: 26px;
+            color: #d63384;
+            font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #d63384;
+            width: 0;
+            animation: typing 4s steps(40) forwards, blink 0.7s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            0% { border-color: transparent; }
+            50% { border-color: #d63384; }
+            100% { border-color: transparent; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- Titolo -->
-    <div class="title-panel">
+    <!-- Cuoricini animati -->
+    <div class="heart" style="left:10%;">💗</div>
+    <div class="heart" style="left:30%; animation-delay:1s;">💖</div>
+    <div class="heart" style="left:50%; animation-delay:2s;">💓</div>
+    <div class="heart" style="left:70%; animation-delay:3s;">💞</div>
+    <div class="heart" style="left:85%; animation-delay:4s;">💕</div>
+
+    <div class="container">
+        <div class="glow-border"></div>
+
         <h1>🌸 Buona Festa della Mamma 🌸</h1>
-    </div>
 
-    <!-- Pannello unico -->
-    <div class="panel">
+        <p>
+            Oggi è un giorno speciale, dedicato a te.  
+            Un giorno per ricordarti quanto sei importante,  
+            quanto fai per noi ogni singolo giorno,  
+            e quanto ti vogliamo bene.
+        </p>
 
-        <!-- Colonna verticale delle foto -->
-        <div class="photo-column">
-            <img src="83TsggivzA2DFyWwHE7hh.jpeg">
-            <img src="g4TDpgRM37kA2PgV9KweF.jpeg">
-            <img src="Rubtoi26schm8mgacUS7m.jpeg">
-            <img src="BATt3RBPkD9RDJkZx96Fb.jpeg">
-            <img src="nPzhXRrTNDkRnorhQyMn2.jpeg">
+        <p>
+            Non servono foto, non servono immagini.  
+            Bastano le parole, quelle sincere,  
+            quelle che vengono dal cuore.
+        </p>
+
+        <p>
+            Grazie per tutto quello che fai,  
+            per la forza che ci dai,  
+            per l’amore che non manca mai.
+        </p>
+
+        <div class="typewriter">
+            🌸 Ti vogliamo bene. 🌸
         </div>
-
-        <!-- Descrizione unica -->
-        <div class="text-box">
-            <h2>Il nostro ricordo</h2>
-            <p>
-                Qui puoi raccontare la storia che unisce tutte queste foto:  
-                un momento speciale, un ricordo importante,  
-                qualcosa che vuoi condividere con lei in questo giorno speciale.
-            </p>
-        </div>
-
     </div>
 
 </body>
 </html>
+
